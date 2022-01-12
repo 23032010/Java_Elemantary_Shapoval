@@ -20,176 +20,203 @@ import java.util.Scanner;
 
 public class University {
     public static void main(String[] args) {
+        firstTask();
+        secondTask();
+        thirdsTask();
+        fourthTask();
+    }
+
+
+    public static void firstTask(){
         System.out.println("""
                 
                 Задание а)
                 Введите название факультета для отображения списка студентов
                 (Информационные технологии, Автоматизация производства, Филология)""");
         Scanner scanner = new Scanner(System.in);
+        Student stud = new Student();
         String faculty = scanner.nextLine();
         String[] array = new String[10];
-        for(int i=0; i<10; i++){
-            massive(array, i);
-            if(faculty.equals(Student.getFaculty())) System.out.println(array[i]);
+
+        for(int j=0;j<10;j++){
+            studentsData(stud, array, j);
+            if(faculty.equals(stud.getFaculty())) System.out.println(array[j]);
+            }
         }
 
+
+    public static void secondTask(){
         System.out.println("""
-                
+
                 Задание b)
                 Введите название факультета (Информационные технологии, Автоматизация производства, Филология)\s
                 и название группы (АМ-202, АМ-203, АК-201, АК-192, КПС-203) для отображения списка студентов""");
-        String yourFaculty = scanner.nextLine();
-        String yourGroup = scanner.nextLine();
-        String[] yourArray = new String[10];
-        for(int i=0; i<10; i++){
-            massive(yourArray, i);
-            if(yourFaculty.equals(Student.getFaculty()) || yourGroup.equals(Student.getGroup())) System.out.println(yourArray[i]);
-        }
-        System.out.println("\nЗадание c)\nВведите год, чтобы узнать, кто из студентов родился после него");
-        int year = scanner.nextInt();
-        String[] newArray = new String[10];
-        for(int i=0; i<10; i++){
-            massive(newArray, i);
-            if(year<Student.getYearOfBirth()) System.out.println(newArray[i]);
-        }
+        Scanner scanner = new Scanner(System.in);
+        Student stud = new Student();
+        String faculty = scanner.nextLine();
+        String group = scanner.nextLine();
+        String[] array = new String[10];
 
+        for(int j=0; j<10; j++){
+            studentsData(stud, array, j);
+            if(faculty.equals(stud.getFaculty()) || group.equals(stud.getGroup())) System.out.println(array[j]);
+        }
+    }
+
+
+    public static void thirdsTask(){
+        System.out.println("\nЗадание c)\nВведите год, чтобы узнать, кто из студентов родился после него");
+        Scanner scanner = new Scanner(System.in);
+        Student stud = new Student();
+        int year = scanner.nextInt();
+        String[] array = new String[10];
+        for(int j=0; j<10; j++){
+            studentsData(stud, array, j);
+            if(year<stud.getYearOfBirth()) System.out.println(array[j]);
+        }
+    }
+
+
+    public static void fourthTask(){
         System.out.println("""
                 
                 Задание d)
                 Введите группу, чтобы отобразить список студентов, которые в ней учатся
                 (АМ-202, АМ-203, АК-201, АК-192, КПС-203):""");
-        String myGroup = scanner.nextLine();
-        String[] noArray = new String[10];
-        for(int i=0; i<10; i++){
-            massive(noArray, i);
-            if(myGroup.equals(Student.getGroup())) System.out.println(noArray[i]);
+        Scanner scanner = new Scanner(System.in);
+        Student stud = new Student();
+        String group = scanner.nextLine();
+        String[] array = new String[10];
+        for(int j=0; j<10; j++){
+            studentsData(stud, array, j);
+            if(group.equals(stud.getGroup())) System.out.println(array[j]);
         }
-
     }
 
-    private static void massive(String[] myArray, int i) {
-        if(i==0){
-            Student.setId(1);
-            Student.setLastName("  Гандзюк ");
-            Student.setFirstName("Дмитрий ");
-            Student.setSecondName("Витальевич, ");
-            Student.setYearOfBirth(2003);
-            Student.setAddress("Адрес: Богдана Хмельницкого, 28,  ");
-            Student.setPhone("Телефон: +380-68-105-52-21,  ");
-            Student.setFaculty("Информационные технологии");
-            Student.setYearOfStudy((byte)3);
-            Student.setGroup("КПС-203");
+    private static void studentsData(Student stud, String[] array, int j) {
+        if(j==0){
+            stud.setId(1);
+            stud.setLastName("  Гандзюк ");
+            stud.setFirstName("Дмитрий ");
+            stud.setSecondName("Витальевич, ");
+            stud.setYearOfBirth(2003);
+            stud.setAddress("Адрес: Богдана Хмельницкого, 28,  ");
+            stud.setPhone("Телефон: +380-68-105-52-21,  ");
+            stud.setFaculty("Информационные технологии");
+            stud.setYearOfStudy(3);
+            stud.setGroup("КПС-203");
         }
-        if(i==1){
-            Student.setId(2);
-            Student.setLastName("  Грушко ");
-            Student.setFirstName("Александр ");
-            Student.setSecondName("Сергеевич, ");
-            Student.setYearOfBirth(2002);
-            Student.setAddress("Адрес: Академика Заболотного, 32,  ");
-            Student.setPhone("Телефон: +380-97-116-43-71,  ");
-            Student.setFaculty("Информационные технологии");
-            Student.setYearOfStudy((byte)3);
-            Student.setGroup("КПС-203");
+        if(j==1){
+            stud.setId(2);
+            stud.setLastName("  Грушко ");
+            stud.setFirstName("Александр ");
+            stud.setSecondName("Сергеевич, ");
+            stud.setYearOfBirth(2002);
+            stud.setAddress("Адрес: Академика Заболотного, 32,  ");
+            stud.setPhone("Телефон: +380-97-116-43-71,  ");
+            stud.setFaculty("Информационные технологии");
+            stud.setYearOfStudy(3);
+            stud.setGroup("КПС-203");
         }
-        if(i==2){
-            Student.setId(3);
-            Student.setLastName("  Дробышева-Яница ");
-            Student.setFirstName("Арина ");
-            Student.setSecondName("Руслановна, ");
-            Student.setYearOfBirth(2003);
-            Student.setAddress("Адрес: Павла Шклярука, 4а,  ");
-            Student.setPhone("Телефон: +380-99-309-72-71,  ");
-            Student.setFaculty("Информационные технологии");
-            Student.setYearOfStudy((byte)3);
-            Student.setGroup("КПС-203");
+        if(j==2){
+            stud.setId(3);
+            stud.setLastName("  Дробышева-Яница ");
+            stud.setFirstName("Арина ");
+            stud.setSecondName("Руслановна, ");
+            stud.setYearOfBirth(2003);
+            stud.setAddress("Адрес: Павла Шклярука, 4а,  ");
+            stud.setPhone("Телефон: +380-99-309-72-71,  ");
+            stud.setFaculty("Информационные технологии");
+            stud.setYearOfStudy(3);
+            stud.setGroup("КПС-203");
         }
-        if(i==3){
-            Student.setId(4);
-            Student.setLastName("  Енальев ");
-            Student.setFirstName("Иван ");
-            Student.setSecondName("Андреевич, ");
-            Student.setYearOfBirth(2001);
-            Student.setAddress("Адрес: Багрицкого, 18,  ");
-            Student.setPhone("Телефон: +380-66-352-43-01,  ");
-            Student.setFaculty("Информационные технологии");
-            Student.setYearOfStudy((byte)3);
-            Student.setGroup("КПС-203");
+        if(j==3){
+            stud.setId(4);
+            stud.setLastName("  Енальев ");
+            stud.setFirstName("Иван ");
+            stud.setSecondName("Андреевич, ");
+            stud.setYearOfBirth(2001);
+            stud.setAddress("Адрес: Багрицкого, 18,  ");
+            stud.setPhone("Телефон: +380-66-352-43-01,  ");
+            stud.setFaculty("Информационные технологии");
+            stud.setYearOfStudy(3);
+            stud.setGroup("КПС-203");
         }
-        if(i==4){
-            Student.setId(5);
-            Student.setLastName("  Кекул ");
-            Student.setFirstName("Кирилл ");
-            Student.setSecondName("Александрович, ");
-            Student.setYearOfBirth(2000);
-            Student.setAddress("Адрес: Вишнёвая, 35,  ");
-            Student.setPhone("Телефон: +380-98-401-69-01,  ");
-            Student.setFaculty("Автоматизация производства");
-            Student.setYearOfStudy((byte)4);
-            Student.setGroup("АК-201");
+        if(j==4){
+            stud.setId(5);
+            stud.setLastName("  Кекул ");
+            stud.setFirstName("Кирилл ");
+            stud.setSecondName("Александрович, ");
+            stud.setYearOfBirth(2000);
+            stud.setAddress("Адрес: Вишнёвая, 35,  ");
+            stud.setPhone("Телефон: +380-98-401-69-01,  ");
+            stud.setFaculty("Автоматизация производства");
+            stud.setYearOfStudy(4);
+            stud.setGroup("АК-201");
         }
-        if(i==5){
-            Student.setId(6);
-            Student.setLastName("  Колесниченко ");
-            Student.setFirstName("Валентин ");
-            Student.setSecondName("Александрович, ");
-            Student.setYearOfBirth(1998);
-            Student.setAddress("Адрес: Добровольского, 14,  ");
-            Student.setPhone("Телефон: +380-97-153-16-81,  ");
-            Student.setFaculty("Автоматизация производства");
-            Student.setYearOfStudy((byte)5);
-            Student.setGroup("АК-192");
+        if(j==5){
+            stud.setId(6);
+            stud.setLastName("  Колесниченко ");
+            stud.setFirstName("Валентин ");
+            stud.setSecondName("Александрович, ");
+            stud.setYearOfBirth(1998);
+            stud.setAddress("Адрес: Добровольского, 14,  ");
+            stud.setPhone("Телефон: +380-97-153-16-81,  ");
+            stud.setFaculty("Автоматизация производства");
+            stud.setYearOfStudy(5);
+            stud.setGroup("АК-192");
         }
-        if(i==6){
-            Student.setId(7);
-            Student.setLastName("  Мальцев ");
-            Student.setFirstName("Вячеслав ");
-            Student.setSecondName("Сергеевич, ");
-            Student.setYearOfBirth(2001);
-            Student.setAddress("Адрес: Онежская, 46,  ");
-            Student.setPhone("Телефон: +380-66-490-90-71,  ");
-            Student.setFaculty("Автоматизация производства");
-            Student.setYearOfStudy((byte)4);
-            Student.setGroup("АК-201");
+        if(j==6){
+            stud.setId(7);
+            stud.setLastName("  Мальцев ");
+            stud.setFirstName("Вячеслав ");
+            stud.setSecondName("Сергеевич, ");
+            stud.setYearOfBirth(2001);
+            stud.setAddress("Адрес: Онежская, 46,  ");
+            stud.setPhone("Телефон: +380-66-490-90-71,  ");
+            stud.setFaculty("Автоматизация производства");
+            stud.setYearOfStudy(4);
+            stud.setGroup("АК-201");
         }
-        if(i==7){
-            Student.setId(8);
-            Student.setLastName("  Недева ");
-            Student.setFirstName("Алина ");
-            Student.setSecondName("Алексеевна, ");
-            Student.setYearOfBirth(2002);
-            Student.setAddress("Адрес: Хуторская, 85,  ");
-            Student.setPhone("Телефон: +380-66-893-40-39,  ");
-            Student.setFaculty("Филология");
-            Student.setYearOfStudy((byte)2);
-            Student.setGroup("АМ-203");
+        if(j==7){
+            stud.setId(8);
+            stud.setLastName("  Недева ");
+            stud.setFirstName("Алина ");
+            stud.setSecondName("Алексеевна, ");
+            stud.setYearOfBirth(2002);
+            stud.setAddress("Адрес: Хуторская, 85,  ");
+            stud.setPhone("Телефон: +380-66-893-40-39,  ");
+            stud.setFaculty("Филология");
+            stud.setYearOfStudy(2);
+            stud.setGroup("АМ-203");
         }
-        if(i==8){
-            Student.setId(9);
-            Student.setLastName("  Овчарук ");
-            Student.setFirstName("Игорь ");
-            Student.setSecondName("Роланович, ");
-            Student.setYearOfBirth(2000);
-            Student.setAddress("Адрес: Академика Заболотного, 45,  ");
-            Student.setPhone("Телефон: +380-66-502-73-31,  ");
-            Student.setFaculty("Филология");
-            Student.setYearOfStudy((byte)3);
-            Student.setGroup("АМ-203");
+        if(j==8){
+            stud.setId(9);
+            stud.setLastName("  Овчарук ");
+            stud.setFirstName("Игорь ");
+            stud.setSecondName("Роланович, ");
+            stud.setYearOfBirth(2000);
+            stud.setAddress("Адрес: Академика Заболотного, 45,  ");
+            stud.setPhone("Телефон: +380-66-502-73-31,  ");
+            stud.setFaculty("Филология");
+            stud.setYearOfStudy(3);
+            stud.setGroup("АМ-203");
         }
-        if(i==9){
-            Student.setId(10);
-            Student.setLastName("  Попов ");
-            Student.setFirstName("Алексей ");
-            Student.setSecondName("Русланович, ");
-            Student.setYearOfBirth(1999);
-            Student.setAddress("Адрес: Новощепной ряд, 11,  ");
-            Student.setPhone("Телефон: +380-96-033-02-21,  ");
-            Student.setFaculty("Филология");
-            Student.setYearOfStudy((byte)3);
-            Student.setGroup("АМ-202");
+        if(j==9){
+            stud.setId(10);
+            stud.setLastName("  Попов ");
+            stud.setFirstName("Алексей ");
+            stud.setSecondName("Русланович, ");
+            stud.setYearOfBirth(1999);
+            stud.setAddress("Адрес: Новощепной ряд, 11,  ");
+            stud.setPhone("Телефон: +380-96-033-02-21,  ");
+            stud.setFaculty("Филология");
+            stud.setYearOfStudy(3);
+            stud.setGroup("АМ-202");
         }
-        myArray[i] = Student.getId()+ Student.getLastName()+ Student.getFirstName()+ Student.getSecondName()
-                + Student.getYearOfBirth()+ " г.р., " + Student.getAddress()+ Student.getPhone()+" Факультет: "+ Student.getFaculty()
-                +", "+ Student.getYearOfStudy()+"-й курс, Группа: "+ Student.getGroup();
+        array[j] = stud.getId()+ stud.getLastName()+ stud.getFirstName()+ stud.getSecondName()
+                + stud.getYearOfBirth()+ " г.р., " + stud.getAddress()+ stud.getPhone()+" Факультет: "+ stud.getFaculty()
+                +", "+ stud.getYearOfStudy()+"-й курс, Группа: "+ stud.getGroup();
     }
+
 }

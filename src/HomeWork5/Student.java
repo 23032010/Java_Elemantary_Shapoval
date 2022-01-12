@@ -11,81 +11,95 @@
 package HomeWork5;
 
 public class Student {
-    private static int id = 0;
-    private static String lastName = "Иванов";
-    private static String firstName = "Иван";
-    private static String secondName = "Иванович";
-    private static int yearOfBirth = 2000;
-    private static String address = "Дерибасовская 1";
-    private static String phone = "+380-99-999-99-99";
-    private static String faculty = "Народного хозяйства";
-    private static byte yearOfStudy = 0;
-    private static String group = "ФХТ-14";
+    private int id;
+    private String lastName;
+    private String firstName;
+    private String secondName;
+    private int yearOfBirth;
+    private String address;
+    private String phone;
+    private String faculty;
+    private int yearOfStudy;
+    private String group;
 
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
-    public static String getLastName() {
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLastName() {
         return lastName;
     }
-    public static String getFirstName() {
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
         return firstName;
     }
-    public static String getSecondName() {
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
         return secondName;
     }
-    public static int getYearOfBirth() {
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public int getYearOfBirth() {
         return yearOfBirth;
     }
-    public static String getAddress() {
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public String getAddress() {
         return address;
     }
-    public static String getPhone() {
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
         return phone;
     }
-    public static String getFaculty() {
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getFaculty() {
         return faculty;
     }
-    public static byte getYearOfStudy() {
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public int getYearOfStudy() {
         return yearOfStudy;
     }
-    public static String getGroup() {
+
+    public void setYearOfStudy(int yearOfStudy) {
+        this.yearOfStudy = yearOfStudy;
+    }
+
+    public String getGroup() {
         return group;
     }
 
-
-    public static void setId(int id) {
-        Student.id = id;
+    public void setGroup(String group) {
+        this.group = group;
     }
-    public static void setLastName(String lastName) {
-        Student.lastName = lastName;
-    }
-    public static void setFirstName(String firstName) {
-        Student.firstName = firstName;
-    }
-    public static void setSecondName(String secondName) {
-        Student.secondName = secondName;
-    }
-    public static void setYearOfBirth(int yearOfBirth) {
-        Student.yearOfBirth = yearOfBirth;
-    }
-    public static void setAddress(String address) {
-        Student.address = address;
-    }
-    public static void setPhone(String phone) {
-        Student.phone = phone;
-    }
-    public static void setFaculty(String faculty) {
-        Student.faculty = faculty;
-    }
-    public static void setYearOfStudy(byte yearOfStudy) {
-        Student.yearOfStudy = yearOfStudy;
-    }
-    public static void setGroup(String group) {
-        Student.group = group;
-    }
-
-
-
 }
