@@ -14,7 +14,7 @@ public class Hw8Main {
         arrColl.add("Попов");
         arrColl.add("Скараев");
 //        arrColl.add(6,"Помпенко");
-//        arrColl.delete("Колесниченко");
+        arrColl.delete("Колесниченко");
 //        arrColl.add(15,"Шаповал");
 //        arrColl.add("Радованов");
         arrColl.print();
