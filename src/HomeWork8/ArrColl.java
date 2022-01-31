@@ -162,27 +162,6 @@ public class ArrColl implements Collection{
             }
             return s;
         }
-
-//        else{                                  //Этот вариант используется если при сравнении элементов не нужно учитывать порядок их расположения в массиве
-//            boolean z = false;
-//            for(int i=0; i<arr.length; i++){
-//
-//                for(int j=0;j<o.length; j++){
-//
-//                    if(arr[i].equals(o[j])){
-//                        z = true;
-//                        break;
-//                    }
-//                }
-//
-//                if(!z){
-//                    break;
-//                }
-//            }
-//            return  z;
-//        }
-
-
     }
 
     @Override
