@@ -6,8 +6,6 @@ public class ArrCollection implements Collection {
 
     private String[] arr = new String[10];
     private int count = 0;
-    int[] indexes = new int[10];
-
 
     @Override
     public boolean add(String o) {                              //Метод добавляет запись в массив на свободное место.
@@ -48,62 +46,6 @@ public class ArrCollection implements Collection {
                 count = index;
             }
         }
-
-
-
-//        if(index > arr.length-1){                               //Проверяем введённый "index".
-//            String[] arr1 = new String[index+1];                //Если он находится за границами массива, то создаем новый массив с количеством элементо, достаточным, чтобы записать входные данные
-//
-//            for(int i=0; i<arr.length; i++){                    //Копируем из изначального массива все элементы в новый массив.
-//                arr1[i] = arr[i];
-//            }
-//            arr1[index] = o;                                    //Присваиваем ячейке с необходимым индексом входные данные.
-//            arr = arr1;                                         //Приравниваем исходный массив результирующему массиву.
-//        }
-//        else{                                                   //Если индекс находится в пределах количества элементов массива,
-//            if(arr[index]==null){                               //и ячейка с этим индексом пуста,
-//                arr[index] = o;                                 //то просто записываем в эту ячейку входные данные.
-//            }
-//            else{                                               //Если же индекс находится в пределах количества элементов массива, но ячейка с эти индексом не пуста,
-//                boolean s = false;
-//                int marker = arr.length+1;
-//                for(int j=index; j<arr.length; j++){            //то определяем есть ли пустые ячейки до конца массива.
-//                    if(arr[j] == null){
-//                        s = true;
-//                        marker = j;
-//                        break;
-//                    }
-//                }
-//                if(s == true){                                  //В случае наличия пустой ячейки до конца массива
-
-//                }
-//                else{                                           //В случае отсутствия пустой ячейки до конца массива
-//                    String[] arr1 = new String[arr.length+1];   //создаём новый массив на одну ячейку больше.
-//
-//                    for(int t=0; t< arr.length; t++){           //Копируем все элементы изначального массива в новый массив.
-//                        arr1[t] = arr[t];
-//                    }
-//
-//
-//                    }
-//
-//                    arr1[index] = o;                            //и записываем входящие данные в необходимую ячейку.
-//
-//                    arr = arr1;                                 //Приравниваем исходный массив результирующему массиву.
-//                }
-//            }
-//        }
-//        if(count< arr.length) {
-//            if(index<count){
-//            for (int i = count; i > index; i--) {     //Сдвигаем все элементы от конца массива до элемента с "index"
-//                arr[i] = arr[i - 1];
-//            }
-//            arr[index] = o;
-//            count++;
-//            }
-//        }
-//        if(count>=arr.length && index<count);
-
         return false;
     }
 
